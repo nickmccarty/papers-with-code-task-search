@@ -10,12 +10,28 @@
   <style>
     body {
       background: linear-gradient(to bottom right, teal, purple);
+      margin: 0;
     }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column; /* Arrange the header and card-container in a column */
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
     .card-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .card {
       cursor: pointer;
       width: 200px;
@@ -38,9 +54,9 @@
       <h1 class="text-center text-white" style="text-shadow: 1px 1px black"><a href="https://paperswithcode.com/">Papers with Code</a></h1>
       <h1 class="text-center text-white" style="text-shadow: 1px 1px grey">Task Search</h1>
       <br>
-      <div class="mb-3 shadow-lg">
-        <input type="text" id="search-input" class="form-control" placeholder="Enter keyword...">
-      </div>
+      <!-- <div class="mb-3 shadow-lg"> -->
+        <input type="text" id="search-input" class="form-control" placeholder="Enter keyword..." style="width: 50%">
+      <!-- </div> -->
       <br>
       <div class="card-container" id="card-container">
         <!-- Cards will be added dynamically here -->

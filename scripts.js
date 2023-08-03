@@ -44,9 +44,10 @@ function parseXML(xml) {
 function createCard(title) {
   const card = document.createElement("div");
   card.classList.add("card");
-  card.classList.add("m-2");
+  card.classList.add("m-4");
+  card.classList.add("shadow-lg");
   card.innerHTML = `
-    <div class="card-image"></div>
+    <div class="card-image img-thumbnail shadow-sm"></div>
     <div class="card-title">${title}</div>
   `;
 
@@ -72,7 +73,8 @@ function extractTextAfterTask(url) {
 
 // Function to generate a random gradient
 function getRandomGradient() {
-  const colors = ["red", "blue", "green", "orange", "pink", "yellow"];
+  const colors = ["#2D4030", "#49684C", "#5D7F61", "#6B8E6E", "#97B299", 
+  "#5A2555", "#5D2A7B", "#7948A2", "#A063C8", "#BE8CE5"];
   const startColor = colors[Math.floor(Math.random() * colors.length)];
   const endColor = colors[Math.floor(Math.random() * colors.length)];
   return `linear-gradient(to bottom right, ${startColor}, ${endColor})`;

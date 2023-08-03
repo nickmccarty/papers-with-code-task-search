@@ -1,4 +1,3 @@
-// Sample XML data for testing
 // Function to fetch XML data from tasks.xml and create cards
 function fetchAndParseXML() {
   fetch('tasks.xml')
@@ -25,26 +24,15 @@ function parseXML(xml) {
     cardContainer.appendChild(card);
   }
 }
-// Function to parse the XML data and create cards
-// function parseXML(xml) {
-//   const parser = new DOMParser();
-//   const xmlDoc = parser.parseFromString(xml, "text/xml");
-//   const urls = xmlDoc.getElementsByTagName("url");
-//   const cardContainer = document.getElementById("card-container");
 
-//   for (const url of urls) {
-//     const loc = url.getElementsByTagName("loc")[0].textContent;
-//     const textAfterTask = extractTextAfterTask(loc);
-//     const card = createCard(textAfterTask);
-//     cardContainer.appendChild(card);
-//   }
-// }
+// Call the parseXML function with the sample XML data
+fetchAndParseXML();
 
 // Function to create a card
 function createCard(title) {
   const card = document.createElement("div");
   card.classList.add("card");
-  card.classList.add("m-4");
+  card.classList.add("m-3");
   card.classList.add("shadow-lg");
   card.innerHTML = `
     <div class="card-image img-thumbnail shadow-sm"></div>
@@ -98,9 +86,6 @@ function handleSearchInput() {
   filterCards(searchTerm);
 }
 
-  // Call the parseXML function with the sample XML data
-  fetchAndParseXML();
-
-  // Add event listener for the search input
+// Add event listener for the search input
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", handleSearchInput);
